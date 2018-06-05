@@ -18,7 +18,8 @@ $(document).ready(function(){
     //  To check if the API is working
     function showEvents(){
         var url = 'https://api.songkick.com/api/3.0/metro_areas/27396/calendar.json?apikey=io09K9l3ebJxmxe2&location=Toronto';
-        
+        var otreebaurl = 'https://api.otreeba.com/v1/swagger.json?apikey=117738136d1c354b4cbf24adb57757959a1c3cca&';
+
         //console.log(url);
         $.ajax({
             url: url,
@@ -54,9 +55,21 @@ $(document).ready(function(){
                 }
                 
             //TODO::Check firebase if item exists before pushing
-                 database.ref("/events").push(eventObject);
+                database.ref("/events").push(eventObject);
+                 
             }                         
         })
+
+        $.ajax({
+            url: otreebaurl,
+            method: "GET"
+        }).then(function(response){
+            var resultOtreeba = response.data;
+            var strains = response.definitions.Strain;
+            console.log(response);
+            //console.log(strains);
+        })
+
     }
     showEvents();
     database.ref().on("child_added", function(childSnapshot){

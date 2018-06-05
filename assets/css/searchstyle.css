@@ -1,0 +1,46 @@
+body {
+    margin: auto;
+    text-align: center;
+}
+
+.picturepicture {
+    height: 300px;
+    width: 300px;
+}
+
+.result-block {
+    line-height: 5px;
+}
+
+nav.navbar{
+    background-color: black;
+    color: white;
+}
+
+a.navbar-brand {
+    color: #28a745;
+    font-size: 28px;
+}
+
+a.nav-link {
+    color: white;
+}
+
+a:active {
+    color: green;
+}
+
+.event-example {
+    line-height: 5px;
+}
+
+#exampleweather {
+    color: green;
+    display: inline-block;
+}
+
+.card {
+    display: inline-block;
+    margin: 15px;
+    padding: 5px;
+}
